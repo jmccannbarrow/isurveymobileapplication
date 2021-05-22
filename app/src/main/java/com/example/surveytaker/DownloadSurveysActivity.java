@@ -187,7 +187,7 @@ public class DownloadSurveysActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                Toast.makeText(DownloadSurveysActivity.this, "Json Data is downloading", Toast.LENGTH_LONG).show();
+                //Toast.makeText(DownloadSurveysActivity.this, "Json Data is downloading", Toast.LENGTH_LONG).show();
 
             }
 
@@ -214,8 +214,11 @@ public class DownloadSurveysActivity extends AppCompatActivity {
                         // Getting JSON Array node
                         JSONArray questions = jsonObj.getJSONArray("questions");
 
+
                         // looping through All Questions
                         for (int i = 0; i < questions.length(); i++) {
+
+
                             JSONObject c = questions.getJSONObject(i);
                             String surveyid = c.getString("surveyid");
                             String questionid = c.getString("questionid");
