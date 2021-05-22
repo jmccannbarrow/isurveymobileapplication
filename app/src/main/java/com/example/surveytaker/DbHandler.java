@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 
 public class DbHandler extends SQLiteOpenHelper {
-    private static final int DB_VERSION = 11;
+    private static final int DB_VERSION = 13;
     private static final String DB_NAME = "surveydb";
     private static final String TABLE_SURVEYS = "surveys";
     private static final String KEY_SURVEYID = "surveyid";
@@ -46,7 +46,7 @@ public class DbHandler extends SQLiteOpenHelper {
         db.execSQL(CREATE_SURVEYS_TABLE);
 
         String CREATE_QUESTIONS_TABLE = "CREATE TABLE " + TABLE_QUESTIONS + "("
-                + KEY_QUESTIONID + " TEXT PRIMARY KEY ," + KEY_QUESTIONDESCRIPTION + " TEXT ," + KEY_QUESTION_SURVEYID + " TEXT"
+                + KEY_QUESTIONID + " TEXT ," + KEY_QUESTIONDESCRIPTION + " TEXT ," + KEY_QUESTION_SURVEYID + " TEXT"
                 +  ")";
 
         db.execSQL(CREATE_QUESTIONS_TABLE);
